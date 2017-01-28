@@ -1,5 +1,9 @@
 package com.serkancura.serkancura.activity;
 
+/**
+ * Created by serka on 28.01.2017.
+ */
+
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -42,7 +46,7 @@ public class Post extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        String url = "http://www.thejavaprogrammer.com/wp-json/wp/v2/posts/"+id+"?fields=title,content";
+        String url = "https://www.serkancura.com/wp-json/wp/v2/posts/"+id+"?fields=title,content";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

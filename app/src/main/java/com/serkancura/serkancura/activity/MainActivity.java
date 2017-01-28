@@ -1,44 +1,48 @@
 package com.serkancura.serkancura.activity;
 
+/**
+ * Created by serka on 28.01.2017.
+ */
+
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.serkancura.serkancura.R;
 
-public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
+import java.util.List;
+import java.util.Map;
 
-    private static String TAG = MainActivity.class.getSimpleName();
+public class MainActivity extends ActionBarActivity {
 
-    private Toolbar mToolbar;
-    private FragmentDrawer drawerFragment;
 
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle("Serkan Cura");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.abc_primary_text_material_dark));
+        setSupportActionBar(toolbar);
 
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        drawerFragment = (FragmentDrawer)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
-        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
-        drawerFragment.setDrawerListener(this);
-
-        // display the first navigation drawer view on app launch
-        displayView(0);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,51 +51,70 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
-        if(id == R.id.action_search){
-            Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
-            return true;
-        }
+}
 
-        return super.onOptionsItemSelected(item);
-    }
+class postlist extends MainActivity {
+
+
+    String url = "https://www.serkancura.com/wp-json/wp/v2/posts?filter[posts_per_page]=10&fields=id,title";
+    List<Object> list;
+    Gson gson;
+    ProgressDialog progressDialog;
+    ListView postList;
+    Map<String,Object> mapPost;
+    Map<String,Object> mapTitle;
+    int postID;
+    String postTitle[];
 
     @Override
-    public void onDrawerItemSelected(View view, int position) {
-        displayView(position);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    private void displayView(int position) {
-        HomeFragment fragment = null;
-        String title = getString(R.string.app_name);
-        switch (position) {
-            case 0:
-                fragment = new HomeFragment();
-                title = getString(R.string.title_home);
-                break;
-            default:
-                break;
-        }
+        postList = (ListView)findViewById(R.id.postList);
+        progressDialog = new ProgressDialog(postlist.this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
 
-        if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body, fragment);
-            fragmentTransaction.commit();
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                gson = new Gson();
+                list = (List) gson.fromJson(s, List.class);
+                postTitle = new String[list.size()];
 
-            // set the toolbar title
-            getSupportActionBar().setTitle(title);
-        }
+                for(int i=0;i<list.size();++i){
+                    mapPost = (Map<String,Object>)list.get(i);
+                    mapTitle = (Map<String, Object>) mapPost.get("title");
+                    postTitle[i] = (String) mapTitle.get("rendered");
+                }
+
+                postList.setAdapter(new ArrayAdapter(postlist.this,android.R.layout.simple_list_item_1,postTitle));
+                progressDialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                Toast.makeText(postlist.this, "Some error occurred", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        RequestQueue rQueue = Volley.newRequestQueue(postlist.this);
+        rQueue.add(request);
+
+        postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mapPost = (Map<String,Object>)list.get(position);
+                postID = ((Double)mapPost.get("id")).intValue();
+
+                Intent intent = new Intent(getApplicationContext(),Post.class);
+                intent.putExtra("id", ""+postID);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -7,9 +7,7 @@ package com.serkancura.serkancura.activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,37 +26,8 @@ import com.serkancura.serkancura.R;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends ActionBarActivity {
-
-
-    private Toolbar toolbar;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Serkan Cura");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.abc_primary_text_material_dark));
-        setSupportActionBar(toolbar);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-
-
-}
-
-class postlist extends MainActivity {
-
-
-    String url = "https://www.serkancura.com/wp-json/wp/v2/posts?filter[posts_per_page]=10&fields=id,title";
+public class MainActivity extends AppCompatActivity {
+    String url = "https://www.serkancura.com/wp-json/wp/v2/posts";
     List<Object> list;
     Gson gson;
     ProgressDialog progressDialog;
@@ -74,7 +43,7 @@ class postlist extends MainActivity {
         setContentView(R.layout.activity_main);
 
         postList = (ListView)findViewById(R.id.postList);
-        progressDialog = new ProgressDialog(postlist.this);
+        progressDialog = new ProgressDialog(MainActivity.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
@@ -92,17 +61,17 @@ class postlist extends MainActivity {
                     postTitle[i] = (String) mapTitle.get("rendered");
                 }
 
-                postList.setAdapter(new ArrayAdapter(postlist.this,android.R.layout.simple_list_item_1,postTitle));
+                postList.setAdapter(new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,postTitle));
                 progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(postlist.this, "Some error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Some error occurred", Toast.LENGTH_LONG).show();
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(postlist.this);
+        RequestQueue rQueue = Volley.newRequestQueue(MainActivity.this);
         rQueue.add(request);
 
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

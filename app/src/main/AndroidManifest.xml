@@ -10,17 +10,6 @@
         android:theme="@style/MyMaterialTheme" >
         <!-- Splash screen -->
         <activity
-            android:name="com.serkancura.serkancura.activity.SplashScreen"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme.Base" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name="com.serkancura.serkancura.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>

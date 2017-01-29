@@ -1,7 +1,7 @@
 package com.serkancura.serkancura.activity;
 
 /**
- * Created by serka on 28.01.2017.
+ * Created by serka on 29.01.2017.
  */
 
 import android.app.ProgressDialog;
@@ -46,7 +46,7 @@ public class Post extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        String url = "https://www.serkancura.com/wp-json/wp/v2/posts/"+id+"?fields=title,content";
+        String url = "http://www.thejavaprogrammer.com/wp-json/wp/v2/posts/"+id+"?fields=title,content";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

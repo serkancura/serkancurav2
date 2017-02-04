@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_home_drawer.xml",
+        "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\menu\\activity_home_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\home.xml",
+        "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\menu\\home.xml"
+    },
+    {
+        "merged": "C:\\Users\\serka\\Documents\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\home.xml",
+        "source": "C:\\Users\\serka\\Documents\\serkancurav2\\app\\src\\main\\res\\menu\\home.xml"
+    },
+    {
+        "merged": "C:\\Users\\serka\\Documents\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_home_drawer.xml",
+        "source": "C:\\Users\\serka\\Documents\\serkancurav2\\app\\src\\main\\res\\menu\\activity_home_drawer.xml"
+    }
+]

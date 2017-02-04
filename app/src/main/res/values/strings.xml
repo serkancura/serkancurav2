@@ -1,22 +1,25 @@
 <resources>
-    <string name="app_name">Seran Cura v2.0</string>
+    <string name="app_name">Serkan Cura v2.0</string>
+    <string name="title_activity_home">Ansayfa</string>
+
+    <!-- fragments name -->
+    <string name="recent_posts">Son Yazılar</string>
+    <string name="categories">Kategoriler</string>
+    <string name="queries">Queries!</string>
+
+    <string name="navigation_drawer_open">Menüyü aç</string>
+    <string name="navigation_drawer_close">Menüyü kapat</string>
+
+    <!-- menu items -->
     <string name="action_settings">Ayarlar</string>
-    <string name="action_search">Ara</string>
-    <string name="drawer_open">Aç</string>
-    <string name="drawer_close">Kapat</string>
+    <string name="contact_us">İletişim</string>
+    <string name="about_us">Hakkımızda</string>
+    <string name="visit_us">Siteye git</string>
+    <string name="facebook">Facebook</string>
+    <string name="youtube">Youtube</string>
+    <string name="website">Website</string>
 
-    <string name="nav_item_home">Home</string>
-    <string name="nav_item_friends">Friends</string>
-    <string name="nav_item_notifications">Messages</string>
+    <string name="toast_network_error">İnternet bağlantısı kötü! Lütfen daha sonra tekrar dneyin</string>
+    <string name="permission">Lütfen uygulamaya izin verin</string>
 
-    <!-- navigation drawer item labels  -->
-    <string-array name="nav_drawer_labels">
-        <item>@string/nav_item_home</item>
-        <item>@string/nav_item_friends</item>
-        <item>@string/nav_item_notifications</item>
-    </string-array>
-
-    <string name="title_messages">Messages</string>
-    <string name="title_friends">Friends</string>
-    <string name="title_home">Home</string>
 </resources>

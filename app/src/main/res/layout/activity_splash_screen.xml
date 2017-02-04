@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash_screen"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.serkancura.serkancura.SplashScreen">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/splash"
+        android:id="@+id/imageView2"
+        android:background="@drawable/splash" />
+
+    <RelativeLayout
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_gravity="bottom|end"
+        android:id="@+id/tv_copyright"
+        android:layout_margin="5dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="copyright@2017"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:layout_gravity="center"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar_splash_screen"
+        android:indeterminate="false"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="220dp" />
+
+</FrameLayout>

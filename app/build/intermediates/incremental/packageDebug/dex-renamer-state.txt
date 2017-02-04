@@ -1,0 +1,7 @@
+#Sat Feb 04 01:42:14 GMT+02:00 2017
+base.0=C\:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a19baf3579140a041e13ea16770ae844a980d8d1
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_84236344ac13e32d1acd34a256f026d2d162f750\\classes.dex
+base.1=C\:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_84236344ac13e32d1acd34a256f026d2d162f750
+file.0=C\:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a19baf3579140a041e13ea16770ae844a980d8d1\\classes.dex

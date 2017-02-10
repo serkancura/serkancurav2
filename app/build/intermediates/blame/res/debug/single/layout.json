@@ -48,12 +48,12 @@
         "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\layout\\toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_home.xml",
-        "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\layout\\nav_header_home.xml"
-    },
-    {
         "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
         "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_home.xml",
+        "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\layout\\nav_header_home.xml"
     },
     {
         "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
@@ -90,6 +90,10 @@
     {
         "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\footer_view.xml",
+        "source": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\src\\main\\res\\layout\\footer_view.xml"
     },
     {
         "merged": "C:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",

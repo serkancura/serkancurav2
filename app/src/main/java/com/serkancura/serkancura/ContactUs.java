@@ -25,7 +25,7 @@ public class ContactUs extends AppCompatActivity {
 
         Font font = new Font();
         toolBarTextView = (TextView) findViewById(R.id.toolbarTextView);
-        toolBarTextView.setText("Contact Us");
+        toolBarTextView.setText("İletişim");
         font.setFont(getApplicationContext(),toolBarTextView);
 
         webView = (WebView) findViewById(R.id.webViewContactUs);

@@ -5,39 +5,46 @@
     density="mdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="63239964271296"
+    timestamp="3261664590270"
     token="7296555182968790546"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="1534" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="68" />
     <task
         name="verifier"
-        duration="0" />
+        duration="6" />
+
+    <artifact
+        location="C:\Users\serka\Documents\Android Projeler\serkancurav2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\serka\Documents\Android Projeler\serkancurav2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="61011286440746"
+        timestamp="2869912066905"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\serka\Documents\Android Projeler\serkancurav2\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="62345265493015"
+        timestamp="3261664590270"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\serka\Documents\Android Projeler\serkancurav2\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
+            location="C:\Users\serka\Documents\Android Projeler\serkancurav2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+            type="DEX" />
+        <artifact
+            location="C:\Users\serka\Documents\Android Projeler\serkancurav2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+            type="DEX" />
     </build>
-    <build
-        timestamp="63239964271296"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

@@ -1,4 +1,4 @@
-#Sun Feb 05 19:25:15 GMT+02:00 2017
+#Fri Feb 10 22:04:09 GMT+02:00 2017
 base.0=C\:\\Users\\serka\\Documents\\Android Projeler\\serkancurav2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a19baf3579140a041e13ea16770ae844a980d8d1
 renamed.1=classes.dex
 renamed.0=classes2.dex

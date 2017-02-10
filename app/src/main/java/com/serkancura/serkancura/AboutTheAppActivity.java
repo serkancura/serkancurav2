@@ -19,7 +19,7 @@ public class AboutTheAppActivity extends AppCompatActivity {
 
         Font font = new Font();
         TextView toolBarTextView = (TextView) findViewById(R.id.toolbarTextView);
-        toolBarTextView.setText("About the app");
+        toolBarTextView.setText("Uygulama hakkında");
         font.setFont(getApplicationContext(), toolBarTextView);
 
         TextView version = (TextView) findViewById(R.id.version);
